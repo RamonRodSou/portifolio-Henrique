@@ -1,9 +1,11 @@
 
 const nameInput = document.querySelector('#nome');
-const counter = document.querySelector('#spam');
-const textInput = document.querySelector('#assunto');
+const counter = document.querySelector('.spam');
 
-  nameInput.addEventListener('input', e => {
+const nameInput2 = document.querySelector('#nome2');
+const counter2 = document.querySelector('.spam2');
+
+  nameInput.addEventListener('input', () => {
 
     if (nameInput.value.length < 50) {
         counter.innerText = nameInput.value.length;
@@ -13,9 +15,12 @@ const textInput = document.querySelector('#assunto');
     }
 }) 
 
+nameInput2.addEventListener('input', () => {
 
-
-
-
-
-
+    if (nameInput2.value.length < 50) {
+        counter2.innerText = nameInput2.value.length;
+    } else {
+        counter2.innerText = 'Max';
+        nameInput2.value = nameInput2.value.substr(0, 50);
+    }
+}) 
